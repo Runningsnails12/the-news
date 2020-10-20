@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jQuery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="login__register">
+        <div class="login">
+            <form action="" class="wrap">
+                <p class="login__title">The News</p>
+                <div>
+                    <label for="login__name">用户名或邮箱</label>
+                    <input id="login__name" type="text" class="cool" />
+                    <span>请输入用户名或邮箱</span>
+                </div>
+
+                <div>
+                    <label for="login__password">密码</label>
+                    <input id="login__password" type="password" class="cool" />
+                    <span>请输入8个以上的字符</span>
+                </div>
+
+                <div>
+                    <label for="login__check">验证码</label>
+                    <input id="login__check" type="text" class="cool" />
+                    <span>验证码错误</span>
+                </div>
+                <div class="CTA">
+                    <button type="login__submit" class="login__submit">登录</button>
+                    <a href="javascript:void(0);" class="switch__login switch">立即注册</a>
+                </div>
+            </form>
+        </div>
+        <div class="register">
+            <form action="" class="wrap">
+
+                <div>
+                    <label for="register__name">用户名</label>
+                    <input id="register__fname" type="text" class="cool" />
+                    <span>请输入用户名</span>
+                </div>
+
+                <div>
+                    <label for="register__password">密码</label>
+                    <input id="register__password" type="password" class="cool" />
+                    <span>请输入8个以上的字符</span>
+                </div>
+
+                <div>
+                    <label for="register__confirm__password">确认密码</label>
+                    <input id="register__confirm__password" type="password" class="cool" />
+                    <span>2次密码输入不一致</span>
+                </div>
+
+                <div>
+                    <label for="register__cellphone">手机号</label>
+                    <input id="register__cellphone" type="text" class="cool" />
+                    <span>请输入正确的手机号</span>
+                </div>
+
+                <div>
+                    <label for="register__email">邮箱</label>
+                    <input id="register__email" type="text" class="cool" />
+                    <span>请输入正确的邮箱</span>
+                </div>
+
+                <div class="CTA">
+                    <button type="register__submit" class="register__submit">注册</button>
+                    <a href="javascript:void(0);" class="switch__register switch">已有帐号？立即登录</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
