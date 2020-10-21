@@ -15,11 +15,15 @@ $(document).on("mousewheel DOMMouseScroll", function (e) {
     var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
         (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
     var a = $(this).scrollTop();
-    if (a >= 0 && a < window.innerHeight - 90) {
+    if (a >= 0 && a < window.innerHeight - 80) {
 
         if (delta < 0) {
             // 向下滚
-            animate_scroll(window, window.innerHeight - 90);
+            window.scrollTo({
+                top: window.innerHeight - 90,
+                behavior: "smooth"
+            });
+            // animate_scroll(window, window.innerHeight - 90);
             $('body').css("overflow-y", "scroll");
         } else if (delta > 0) {
             // 向上滚
@@ -34,7 +38,7 @@ $(document).on("mousewheel DOMMouseScroll", function (e) {
 
 function animate_scroll(obj, dis) {
     clearInterval(obj.timer);
-    document.body.onmousewheel = function () { return false; }
+    // document.body.onmousewheel = function () { return false; }
     obj.timer = setInterval(function () {
         var step = (dis - window.pageYOffset) / 10;
         if (step > 0) {
@@ -45,9 +49,9 @@ function animate_scroll(obj, dis) {
         if (window.pageYOffset == dis) {
             clearInterval(obj.timer);
         }
-        if (step == 0) {
-            document.body.onmousewheel = function () { return true; }
-        }
+        // if (step == 0) {
+        // document.body.onmousewheel = function () { return true; }
+        // }
         window.scroll(0, window.pageYOffset + step);
     }, 20);
 }

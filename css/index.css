@@ -605,7 +605,7 @@ i {
   color: black;
 }
 
-.item {
+.recommend .item {
   width: 275px;
   height: 350px;
   background: #fff;
@@ -614,12 +614,12 @@ i {
   overflow: hidden;
   border-radius: 10px;
 }
-.container {
+.recommend .container {
   display: inline-block;
   margin-right: 30px;
   margin-bottom: 50px;
 }
-.item .img {
+.recommend .item .img {
   width: 100%;
   height: 50%;
   background: black;
@@ -629,7 +629,7 @@ i {
   overflow: hidden;
 }
 
-.item .img-content {
+.recommend .item .img-content {
   width: 100%;
   height: 100%;
   transition: 0 !important;
@@ -650,28 +650,28 @@ i {
   background-image: url(http://www.dsj365.cn/dsj/mtg/image_article_zl/20200425/img_334.jpg);
 }
 
-.item.showfull .text-container {
+.recommend .item.showfull .text-container {
   height: 90%;
 }
 
-.item.showfull .content {
+.recommend .item.showfull .content {
   height: 78%;
 }
 
-.item.showfull .social {
+.recommend .item.showfull .social {
   top: 25px;
 }
 
-.item.showfull .img-content {
+.recommend .item.showfull .img-content {
   transform: scale(1.04);
   filter: blur(5px);
 }
 
-.item.showfull .like {
+.recommend .item.showfull .like {
   margin-top: 100px;
 }
 
-.item .text-container {
+.recommend .item .text-container {
   width: 100%;
   height: 55%;
   background: #fff;
@@ -687,17 +687,17 @@ i {
   transition: 0.2s;
 }
 
-.item .content {
+.recommend .item .content {
   height: 63%;
   margin-bottom: 10px;
   overflow: hidden;
 }
-.item .content p {
+.recommend .item .content p {
   font-size: 1.1rem;
   line-height: 1.5rem;
   text-align: justify;
 }
-.item .social {
+.recommend .item .social {
   width: 100%;
   height: 50px;
   position: absolute;
@@ -708,12 +708,12 @@ i {
   transition: 0.2s;
 }
 
-.item h2 {
+.recommend .item h2 {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-.item .social div {
+.recommend .item .social div {
   width: 50px;
   height: 50px;
   background: green;
@@ -727,27 +727,27 @@ i {
   color: #fff;
 }
 
-.item .social div:hover {
+.recommend .item .social div:hover {
   transform: scale(1.1);
 }
 
-.item .social a:last-child {
+.recommend .item .social a:last-child {
   margin-right: 20px;
 }
 
-.item a .tw {
+.recommend .item a .tw {
   background-color: #0084b4;
 }
 
-.item a .fb {
+.recommend .item a .fb {
   background-color: #3b5998;
 }
 
-.item a .ig {
+.recommend .item a .ig {
   background-color: #cd486b;
 }
 
-.item .like {
+.recommend .item .like {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -761,7 +761,7 @@ i {
   align-items: center; */
   z-index: 10;
 }
-.like svg {
+.recommend .like svg {
   position: absolute;
   width: 23px;
   height: 23px;
@@ -770,35 +770,35 @@ i {
   fill: rgb(101, 119, 134);
 }
 
-.item .like:hover {
+.recommend .item .like:hover {
   transform: scale(1.1);
   background-color: rgb(245, 226, 232);
 }
-.item .like:hover svg {
+.recommend .item .like:hover svg {
   fill: rgb(224, 36, 94);
 }
 
-.item .like i {
+.recommend .item .like i {
   font-size: 15px;
 }
 
-.item .like.clicked {
+.recommend .item .like.clicked {
   background: #ffcece;
 }
-.item .clicked1 {
+.recommend .item .clicked1 {
   fill: rgb(224, 36, 94);
 }
 
-.item .like.clicked i {
+.recommend .item .like.clicked i {
   color: #e60026;
 }
 
-.item .readmore {
+.recommend .item .readmore {
   display: flex;
   padding-bottom: 5px;
 }
 
-.item .readmore h3 {
+.recommend .item .readmore h3 {
   display: block;
   padding: 10px 15px;
   height: 3rem;
@@ -822,8 +822,31 @@ i {
   display: inline-block;
   padding: 1rem 1rem;
   font-size: 1.5rem;
+  color: black;
   margin-right: 2rem;
   margin-bottom: 2rem;
   border: 1px solid #1e262d;
   border-radius: 30px;
+}
+
+.download {
+  width: 100%;
+}
+.dl_list {
+  text-align: center;
+}
+.download .item {
+  display: inline-block;
+  width: 80px;
+  color: #666;
+  font-size: 12px;
+  letter-spacing: normal;
+  line-height: 20px;
+  text-align: center;
+}
+.dl_list .svg_icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 20px;
 }

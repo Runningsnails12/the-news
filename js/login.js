@@ -13,70 +13,161 @@ var $login = $('.login'),
     $register = $('.register');
 
 $('.switch__login').on('click', function () {
-    $login.css("left", "480px");
-    $register.css("left", "950px");
+    $login.css("left", "400px");
+    $register.css("left", "870px");
 });
 $('.switch__register').on('click', function () {
-    $login.css("left", "950px");
-    $register.css("left", "480px");
+    $login.css("left", "870px");
+    $register.css("left", "400px");
 });
 
 
 
-var usename = $('#register__fname').val();
-var password__val;
-var register__confirm__password;
-var register__cellphone;
-var register__email;
-var pattern = /^1[3-9]+\d{9}$/;
-var myreg = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
-
+// 注册验证
+var usename = $('#register__fname').val(),
+    password__val,
+    register__confirm__password,
+    register__cellphone,
+    register__email,
+    pattern = /^1[3-9]+\d{9}$/,
+    myreg = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
+    err = 0;
 
 usename = $('#register__fname').val();
 if (usename == "") {
-    $('#register__fname').parent().find('span').addClass('show');
+    $('#register__fname').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+    err = 0;
 } else {
-    $('#register__fname').parent().find('span').removeClass('show');
+    $('#register__fname').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+    err = 1;
 }
 $('#register__fname').bind('input propertychange', function () {
-    console.log(2);
-
     usename = $('#register__fname').val();
     if (usename == null) {
-        $('#register__fname').parent().find('span').addClass('show');
+        $('#register__fname').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err = 0;
     } else {
-        $('#register__fname').parent().find('span').removeClass('show');
+        $('#register__fname').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err = 1;
     }
 });
 $('#register__password').bind('input propertychange', function () {
     password__val = $('#register__password').val();
     if (password__val.length < 8) {
-        $('#register__password').parent().find('span').addClass('show');
+        $('#register__password').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err = 0;
     } else {
-        $('#register__password').parent().find('span').removeClass('show');
+        $('#register__password').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err = 1;
     }
 });
 $('#register__confirm__password').bind('input propertychange', function () {
     register__confirm__password = $('#register__confirm__password').val();
     if (register__confirm__password != password__val) {
-        $('#register__confirm__password').parent().find('span').addClass('show');
+        $('#register__confirm__password').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err = 0;
     } else {
-        $('#register__confirm__password').parent().find('span').removeClass('show');
+        $('#register__confirm__password').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err = 1;
     }
 });
 $('#register__cellphone').bind('input propertychange', function () {
     register__cellphone = $('#register__cellphone').val();
     if (!pattern.test(register__cellphone)) {
-        $('#register__cellphone').parent().find('span').addClass('show');
+        $('#register__cellphone').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err = 0;
     } else {
-        $('#register__cellphone').parent().find('span').removeClass('show');
+        $('#register__cellphone').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err = 1;
     }
 });
 $('#register__email').bind('input propertychange', function () {
     register__email = $('#register__email').val();
     if (!myreg.test(register__email)) {
-        $('#register__email').parent().find('span').addClass('show');
+        $('#register__email').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err = 0;
     } else {
-        $('#register__email').parent().find('span').removeClass('show');
+        $('#register__email').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err = 1;
+    }
+});
+
+$('#registerForm').on('submit', function () {
+    var result = serializeToJson($(this));
+    if (result.register__fname.trim().length == 0) {
+        alert('请输入用户名');
+        return false;
+    }
+    if (result.password.trim().length == 0) {
+        alert('请输入密码');
+        return false;
+    }
+    if (result.confirm__password.trim().length == 0) {
+        alert('请确认密码');
+        return false;
+    }
+    if (result.cellphone.trim().length == 0) {
+        alert('请输入电话号码');
+        return false;
+    }
+    if (result.email.trim().length == 0) {
+        alert('请输入邮箱');
+        return false;
+    }
+    if (err == 0) {
+        alert('请检查一遍信息');
+        return false;
+    }
+});
+function serializeToJson(form) {
+    var result = {};
+    var f = form.serializeArray();
+    f.forEach(function (item) {
+        result[item.name] = item.value;
+    });
+    return result;
+}
+
+// 登录验证
+var login__name,
+    login__password,
+    err1;
+$('#login__name').bind('input propertychange', function () {
+    login__name = $('#login__name').val();
+    if (login__name == "") {
+        $('#login__name').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err1 = 0;
+    } else {
+        $('#login__name').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err1 = 1;
+    }
+});
+$('#login__password').bind('input propertychange', function () {
+    login__password = $('#login__password').val();
+    if (login__password.length < 8) {
+        $('#login__password').css('borderBottom', '1px solid red').parent().find('span').addClass('show');
+        err1 = 0;
+    } else {
+        $('#login__password').css('borderBottom', '1px solid #8facbd').parent().find('span').removeClass('show');
+        err1 = 1;
+    }
+});
+$('#loginForm').on('submit', function () {
+    var result = serializeToJson($(this));
+    if (result.login__name.trim().length == 0) {
+        alert('请输入用户名');
+        return false;
+    }
+    if (result.login__password.trim().length == 0) {
+        alert('请输入密码');
+        return false;
+    }
+    if (result.login__check.trim().length == 0) {
+        alert('请输入验证码');
+        return false;
+    }
+    if (err1 == 0) {
+        alert('请检查一遍信息');
+        return false;
     }
 });

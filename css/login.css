@@ -32,7 +32,7 @@ input {
 }
 .login {
   position: absolute;
-  left: 950px;
+  left: 870px;
 }
 .wrap {
   width: 480px;
@@ -85,7 +85,7 @@ input {
   margin-bottom: 10px;
   outline: 0;
   border: 0;
-  background-color: #9e3e42;
+  background-color: #527c8b;
   border-radius: 50px;
 }
 .login {
@@ -93,7 +93,7 @@ input {
 }
 .register {
   position: absolute;
-  left: 480px;
+  left: 400px;
   transition: all 0.9s cubic-bezier(1, -0.375, 0.285, 0.995);
 }
 
@@ -114,7 +114,7 @@ input {
   height: 580px;
   position: absolute;
   top: -30px;
-  left: 430px;
+  left: 356px;
   background: rgba(0, 0, 0, 0.85);
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   z-index: 10005;
@@ -131,7 +131,7 @@ input {
 span {
   display: none;
   position: absolute;
-  top: 10px;
+  top: 46px;
   right: 35px;
   color: #f95959;
   font-size: 12px;
@@ -142,5 +142,5 @@ span {
 }
 .login__submit:hover,
 .register__submit:hover {
-  background-color: #d6242a;
+  background-color: #2d3153;
 }
