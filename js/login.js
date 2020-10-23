@@ -117,6 +117,28 @@ $('#registerForm').on('submit', function () {
     if (err == 0) {
         alert('请检查一遍信息');
         return false;
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "/user/rigist",
+            //方法1：将form表单数据序列化
+            // data : $('#registerForm').serialize(),
+            //方法2：传送json数据
+            data: { username: result.register__fname.trim(), password: result.password.trim(), telephone: result.cellphone.trim(), email: result.email.trim(), checkCode: result.confirm__password.trim() },
+            dataType: "json",
+            success: function (flag, data, errorMsg) {
+                //接收后台返回的结果
+                if (falg == true) {
+                    alert("提交成功");
+                    window.location.Reload();
+                } else {
+                    alert("操作失败");
+                }
+            },
+            error: function (data) {
+                alert("操作异常" + data.responseText);
+            }
+        });
     }
 });
 function serializeToJson(form) {
@@ -169,5 +191,27 @@ $('#loginForm').on('submit', function () {
     if (err1 == 0) {
         alert('请检查一遍信息');
         return false;
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "/user/login",
+            //方法1：将form表单数据序列化
+            // data : $('#registerForm').serialize(),
+            //方法2：传送json数据
+            data: { username: result.login__name.trim(), password: result.login__password.trim(), checkCode: result.login__check.trim() },
+            dataType: "json",
+            success: function (flag, data, errorMsg) {
+                //接收后台返回的结果
+                if (falg == true) {
+                    alert("提交成功");
+                    window.location.Reload();
+                } else {
+                    alert("操作失败");
+                }
+            },
+            error: function (data) {
+                alert("操作异常" + data.responseText);
+            }
+        });
     }
 });

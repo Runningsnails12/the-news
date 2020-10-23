@@ -82,7 +82,7 @@ nav li:hover ul {
 nav li li {
   float: none;
 }
-.dropdown ul {
+nav .dropdown ul {
   position: absolute;
   left: 0;
   top: 107%;
@@ -90,7 +90,7 @@ nav li li {
   padding: 20px 0;
   border-bottom: 3px solid #34495e;
 }
-.dropdown ul::before {
+nav .dropdown ul::before {
   content: "";
   position: absolute;
   width: 50%;
@@ -98,15 +98,15 @@ nav li li {
   top: -8%;
   left: 0;
 }
-.dropdown li {
+nav .dropdown li {
   white-space: nowrap;
 }
-.dropdown li a {
+nav .dropdown li a {
   padding: 10px 35px;
   font-size: 13px;
   min-width: 200px;
 }
-.other::after {
+nav .other::after {
   content: "";
   position: absolute;
   right: 20%;
@@ -115,11 +115,11 @@ nav li li {
   border-color: white transparent transparent transparent;
   transition: 0.4s all ease-in-out;
 }
-.other:hover::after {
+nav .other:hover::after {
   transform: rotate(-180deg);
   top: 40%;
 }
-.mega-dropdown {
+nav .mega-dropdown {
   width: 100%;
   position: absolute;
   top: 100%;
@@ -163,6 +163,10 @@ nav li li a:hover {
 @media only screen and (max-width: 1170px) {
   nav > ul > li > a {
     padding: 35px 15px;
+  }
+  nav .other::after {
+    right: 3%;
+    top: 51%;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -240,8 +244,28 @@ nav li li a:hover {
   .mega-col {
     width: 100%;
   }
+  .from-center:before {
+    display: none;
+  }
+  body .the__title::before {
+    left: 36%;
+  }
+  body .history {
+    width: 100%;
+    margin: 0 45px;
+  }
+  nav .other::after {
+    display: none;
+  }
+  .slide__text .slide__text-heading {
+    border-left: none;
+  }
 }
-
+@media only screen and (max-width: 800px) {
+  body .the__title::before {
+    left: 44%;
+  }
+}
 /* slider */
 
 svg {
@@ -507,9 +531,6 @@ svg {
     display: none;
   }
 }
-/* .slide__text-link:hover:before {
-  transform: rotateX(0);
-} */
 
 /* 特效 */
 .from-center {
@@ -617,7 +638,7 @@ i {
 .recommend .container {
   display: inline-block;
   margin-right: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 82px;
 }
 .recommend .item .img {
   width: 100%;
@@ -709,6 +730,7 @@ i {
 }
 
 .recommend .item h2 {
+  font-size: 16px;
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -831,6 +853,9 @@ i {
 
 .download {
   width: 100%;
+  border-top: 1.5px solid black;
+  padding: 30px 0;
+  margin-top: 20px;
 }
 .dl_list {
   text-align: center;
