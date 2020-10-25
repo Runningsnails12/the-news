@@ -46,9 +46,9 @@ input {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.wrap div {
+.wrap > div {
   position: relative;
-  margin: 2rem 0;
+  margin: 25px 0;
 }
 
 .login__register label {
@@ -143,4 +143,11 @@ span {
 .login__submit:hover,
 .register__submit:hover {
   background-color: #2d3153;
+}
+.check__img {
+  position: absolute;
+  right: 30px;
+  width: 80px;
+  height: 30px;
+  background-color: #ccc;
 }

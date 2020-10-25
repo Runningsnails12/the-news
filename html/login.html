@@ -17,23 +17,24 @@
                 <p class="login__title">The News</p>
                 <div>
                     <label for="login__name">用户名或邮箱</label>
-                    <input id="login__name" type="text" name="login__name" />
+                    <input id="login__name" type="text" name="username" />
                     <span>请输入用户名或邮箱</span>
                 </div>
 
                 <div>
                     <label for="login__password">密码</label>
-                    <input id="login__password" type="password" name="login__password" />
-                    <span>请输入8个以上的字符</span>
+                    <input id="login__password" type="password" name="password" />
+                    <span>请输入6个以上的字符</span>
                 </div>
 
                 <div>
                     <label for="login__check">验证码</label>
-                    <input id="login__check" type="text" name="login__check" />
+                    <img src="/user/checkCode" alt="" class="check__img">
+                    <input id="login__check" type="text" name="checkCode" />
                     <span>验证码错误</span>
                 </div>
                 <div class="CTA">
-                    <button type="submit" class="login__submit">登录</button>
+                    <button type="button" class="login__submit" id="btn_sub1">登录</button>
                     <a href="javascript:void(0);" class="switch__login switch">立即注册</a>
                 </div>
             </form>
@@ -43,14 +44,14 @@
 
                 <div>
                     <label for="register__fname">用户名</label>
-                    <input id="register__fname" type="text" name="register__fname" />
+                    <input id="register__fname" type="text" name="username" />
                     <span>请输入用户名</span>
                 </div>
 
                 <div>
                     <label for="register__password">密码</label>
                     <input id="register__password" type="password" name="password" />
-                    <span>请输入8个以上的字符</span>
+                    <span>请输入6个以上的字符</span>
                 </div>
 
                 <div>
@@ -60,8 +61,15 @@
                 </div>
 
                 <div>
+                    <label for="register__check">验证码</label>
+                    <img src="/user/checkCode" alt="" class="check__img">
+                    <input id="register__check" type="text" name="checkCode" />
+                    <span>验证码错误</span>
+                </div>
+
+                <div>
                     <label for="register__cellphone">手机号</label>
-                    <input id="register__cellphone" type="text" name="cellphone" />
+                    <input id="register__cellphone" type="text" name="telephone" />
                     <span>请输入正确的手机号</span>
                 </div>
 
@@ -72,7 +80,7 @@
                 </div>
 
                 <div class="CTA">
-                    <button type="submit" class="register__submit">注册</button>
+                    <button type="button" class="register__submit" id="btn_sub2">注册</button>
                     <a href="javascript:void(0);" class="switch__register switch">已有帐号？立即登录</a>
                 </div>
             </form>

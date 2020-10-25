@@ -11,6 +11,7 @@ body {
   position: relative;
   font-size: 62.5%;
   height: 100%;
+  background-color: #eef0f4;
 }
 
 input {
@@ -35,7 +36,7 @@ a {
 }
 .search {
   float: right;
-  padding: 30px;
+  padding: 23px;
 }
 #header input {
   border: none;
@@ -44,7 +45,7 @@ a {
 }
 .logo {
   float: left;
-  padding: 2rem 0 2rem;
+  padding: 1rem 0 1rem;
 }
 .logo a {
   font-size: 4rem;
@@ -67,7 +68,7 @@ nav .dropdown {
 }
 nav li a {
   float: left;
-  padding: 35px;
+  padding: 30px 35px;
   font-size: 1.5rem;
 }
 nav li a:hover {
